@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Customer Reviews</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <section class="reviews-section">
+    <h1>Our Customer's Wall of Love ❤️</h1>
+
+    <!-- Review Us Box -->
+    <div class="review-box">
+      <img src="picture/new.png" alt="Google Logo" class="google-review-logo" />
+      <div class="review-box-text">
+        <h2>Love our service?</h2>
+        <p>Your feedback means the world to us.</p>
+        <a class="review-btn" href="https://www.google.com/search?q=TTE+ELEPHANT+HEADSPA+SDN+BHD+Reviews" target="_blank">
+          ✍️ Leave a Review on Google
+        </a>
+      </div>
+    </div>
+
+    <!-- Slider Navigation -->
+    <div class="slider-controls">
+      <button class="prev">← Prev</button>
+      <button class="next">Next →</button>
+    </div>
+
+    <!-- Dynamic Reviews -->
+    <div class="reviews-container" id="reviews"></div>
+    <p id="error-message" style="display:none; color:red; text-align:center;">Unable to load reviews at the moment. Please try again later.</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
