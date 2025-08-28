@@ -23,20 +23,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   function renderReview(index) {
-    reviewsContainer.innerHTML = ""; // Clear existing
+    reviewsContainer.innerHTML = ""; // Clear existing content
 
     const review = reviews[index];
     const stars = "⭐".repeat(Math.round(review.rating || 0));
     const profileInitial = review.author_name?.charAt(0).toUpperCase() || "?";
     const fullText = review.text || "";
     const shortText = fullText.length > 130 ? fullText.substring(0, 130) + "..." : fullText;
+    const isLong = fullText.length > 130;
 
     const card = document.createElement("div");
     card.className = "review-card";
     card.style.backgroundColor = pastelColors[colorIndex];
-    colorIndex = (colorIndex + 1) % pastelColors.length;
-
-    const isLong = fullText.length > 130;
+    colorIndex = (colorIndex + 1) % pastelColors.length; // rotate to next color
 
     card.innerHTML = `
       <div class="google-logo">
@@ -77,13 +76,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Navigation (if buttons exist in DOM)
-  document.querySelector(".prev")?.addEventListener("click", () => {
+  // Arrow navigation buttons
+  document.querySelector(".left-arrow")?.addEventListener("click", () => {
     currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
     renderReview(currentIndex);
   });
 
-  document.querySelector(".next")?.addEventListener("click", () => {
+  document.querySelector(".right-arrow")?.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % reviews.length;
     renderReview(currentIndex);
   });

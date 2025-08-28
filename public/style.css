@@ -1,3 +1,4 @@
+
 /* Global Styles */
 body {
   margin: 0;
@@ -21,65 +22,57 @@ body {
   color: #222;
 }
 
-/* Review Us Box */
-.review-box {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  padding: 20px;
-  margin-bottom: 30px;
+/* Carousel Wrapper with Arrows Inside */
+.reviews-container-wrapper {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto 40px;
   display: flex;
   align-items: center;
-  gap: 16px;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.google-review-logo {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
+.arrow-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #444;
+  background: #ffffff;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s ease, transform 0.2s ease;
+  z-index: 10;
 }
 
-.review-box-text {
-  flex: 1;
-  min-width: 200px;
+.arrow-button:hover {
+  background: #f5f5f5;
+  transform: translateY(-50%) scale(1.05);
 }
 
-.review-box-text h2 {
-  font-size: 1.4rem;
-  margin: 0 0 5px;
+.left-arrow {
+  left: -20px; /* shift left slightly to avoid overlapping content */
 }
 
-.review-box-text p {
-  margin: 0 0 10px;
-  font-size: 1rem;
-  color: #555;
+.right-arrow {
+  right: -20px;
 }
 
-.review-btn {
-  display: inline-block;
-  background-color: #4285f4;
-  color: white;
-  padding: 10px 18px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-.review-btn:hover {
-  background-color: #3367d6;
-}
-
-/* Review Carousel Container */
+/* Reviews Container */
 .reviews-container {
-  position: relative;
+  flex: 1;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
   min-height: 380px;
 }
 
-/* Single Review Card */
+/* Review Card */
 .review-card {
   background-color: #e0f7fa;
   border-radius: 20px;
@@ -98,7 +91,7 @@ body {
   transform: translateY(-6px);
 }
 
-/* Google G logo */
+/* Google Logo */
 .google-logo img {
   width: 24px;
   margin-bottom: 10px;
@@ -118,16 +111,14 @@ body {
   color: #333;
   margin-bottom: 20px;
   max-width: 90%;
-
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;  /* Show only 4 lines */
+  -webkit-line-clamp: 4;
   overflow: hidden;
 }
 
 .review-text.expanded {
   max-height: none;
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: unset;
 }
 
@@ -145,7 +136,7 @@ body {
   text-decoration: underline;
 }
 
-/* Author Section */
+/* Author */
 .review-author {
   display: flex;
   align-items: center;
@@ -160,49 +151,7 @@ body {
   text-decoration: underline;
 }
 
-.review-author img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.fallback-profile {
-  background-color: #fff;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  color: #555;
-  border: 1px solid #ccc;
-}
-
-/* Slider Buttons */
-.slider-controls {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 15px;
-  margin-bottom: 30px;
-}
-
-.slider-controls button {
-  background-color: #4285f4;
-  color: #fff;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
-.slider-controls button:hover {
-  background-color: #3367d6;
-}
-
+.review-author img,
 .author-img {
   width: 40px;
   height: 40px;
@@ -210,6 +159,7 @@ body {
   object-fit: cover;
 }
 
+/* Fallback Profile Circle */
 .fallback-profile {
   width: 40px;
   height: 40px;
@@ -222,3 +172,5 @@ body {
   font-weight: bold;
   font-size: 1rem;
 }
+
+
